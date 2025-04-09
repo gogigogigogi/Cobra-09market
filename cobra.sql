@@ -11,7 +11,7 @@ create database cobra09;
 use cobra09;
 
 -- 1. 'cobra' 사용자 생성 (비밀번호는 '1234'로 설정)
-CREATE USER 'cobra' @'%' IDENTIFIED BY '1234';
+CREATE USER 'cobra' @'%' IDENTIFIED BY '9748';
 
 -- 2. 'cobra' 사용자에게 모든 데이터베이스에 대한 모든 권한 부여
 GRANT ALL PRIVILEGES ON *.* TO 'cobra' @'%';
@@ -27,13 +27,13 @@ ALTER TABLE product MODIFY COLUMN deadline DATETIME NOT NULL;
 
 
 -- Category 테이블 생성
-CREATE TABLE Category (
+CREATE TABLE category (
     category_id INT PRIMARY KEY, -- 카테고리 ID (Primary Key)
     category_name VARCHAR(255) NOT NULL -- 카테고리 이름
 );
 
 -- User 테이블 생성
-CREATE TABLE User (
+CREATE TABLE user (
     user_id INT AUTO_INCREMENT PRIMARY KEY, -- 사용자 ID (Primary Key)
     email VARCHAR(255) NOT NULL, -- 사용자 이메일
     password VARCHAR(255) NOT NULL, -- 비밀번호 (해시 저장)
